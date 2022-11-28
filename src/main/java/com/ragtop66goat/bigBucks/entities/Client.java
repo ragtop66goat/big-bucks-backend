@@ -10,7 +10,7 @@ public class Client {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+    public Long id;
 
     private String email;
 
@@ -22,9 +22,18 @@ public class Client {
 
     }
 
-    public Client(Long id, String email) {
+    public Client(Long id, String email, String startDate, String endDate) {
         this.id = id;
         this.email = email;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
+    public Client(Client client) {
+        this.id = client.id;
+        this.email = client.email;
+        this.startDate = client.startDate;
+        this.endDate = client.endDate;
     }
 
     public Long getId() {
