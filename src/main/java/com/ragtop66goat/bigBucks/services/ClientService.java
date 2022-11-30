@@ -22,6 +22,10 @@ public class ClientService {
         clientRepository.save(client);
     }
 
+    public void deleteClient(Long id){
+        clientRepository.deleteById(id);
+    }
+
     public Optional<Client> getReservations(Long id){
         return clientRepository.findById(id);
     }
